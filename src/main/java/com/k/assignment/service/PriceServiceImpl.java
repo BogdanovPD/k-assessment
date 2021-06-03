@@ -62,7 +62,7 @@ public class PriceServiceImpl implements PriceService {
                 .size(priceRequest.getBoxSize())
                 .price(priceRequest.getBoxPrice())
                 .priceForSingle(boxBarPrice)
-                .priority(3) // box should have greatest priority because it is the most convenient way to receive chocolate
+                .priority(1) // box should have greatest priority because it is the most convenient way to receive chocolate
                 .build());
         ordered.add(Package.builder()
                 .type(PACK)
@@ -76,7 +76,7 @@ public class PriceServiceImpl implements PriceService {
                 .size(1)
                 .price(priceRequest.getBarPrice())
                 .priceForSingle(priceRequest.getBarPrice())
-                .priority(1)
+                .priority(3)
                 .build());
         ordered.sort(Comparator.comparing(Package::getPriceForSingle).thenComparing(Package::getPriority));
         return ordered;

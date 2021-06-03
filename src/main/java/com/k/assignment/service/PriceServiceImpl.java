@@ -19,6 +19,11 @@ public class PriceServiceImpl implements PriceService {
     private static final String PACK = "pack";
     private static final String BAR = "bar";
 
+    /**
+     * Calculates optimal combination of packages and single items to achieve minimal price and the price itself
+     *
+     * @param priceRequest - Object which contains data about single items and packages (size, price) and required items count
+     */
     public PriceResponse calculateOptimal(PriceRequest priceRequest) {
         Integer countRemainder = priceRequest.getCount();
         List<Package> sortedList = getSortedList(priceRequest);

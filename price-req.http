@@ -1,0 +1,13 @@
+POST http://localhost:8080/price
+Content-Type: application/json
+
+{
+  "count": 150,
+  "barPrice": 2.3,
+  "packPrice": 25,
+  "boxPrice": 230,
+  "packSize": 12,
+  "boxSize": 120
+}
+
+###
